@@ -6,6 +6,7 @@ import ErrorBoundry from "../ErrorBoundry";
 import SwapiService from "../../services/swapi-service";
 import Layout from "../Layout/Layout";
 import "./App.css";
+import RandomPlanet from "../RandomPlanet";
 
 class App extends React.Component {
 
@@ -23,16 +24,15 @@ class App extends React.Component {
       <ErrorBoundry>
           <SwapiServiceProvider value={this.state.swapiService}>
                 <div className="stardb-app">
-                    <BrowserRouter >
-                        <Routes >
-                            <Route path="/" element={<Layout />}>
-                                <Route path="/people/" element={<PeoplePage/>}/>
-                                <Route path="/planets/" element={<PlanetsPage/>}/>
-                                <Route path="/starships/" element={<StarshipsPage/>} />
-                                <Route path="*" element={<h2>Page does not exist</h2>}/>
-                            </Route>
-                        </Routes>
-                    </BrowserRouter>
+                    <Routes >
+                        <Route path="/" element={<Layout />}>
+                            <Route index element={<PeoplePage />}/>
+                            <Route path="/people/" element={<PeoplePage/>}/>
+                            <Route path="/planets/" element={<PlanetsPage/>}/>
+                            <Route path="/starships/" element={<StarshipsPage/>} />
+                            <Route path="*" element={<PeoplePage />}/>
+                        </Route>
+                    </Routes>
                 </div>
           </SwapiServiceProvider>
       </ErrorBoundry>
