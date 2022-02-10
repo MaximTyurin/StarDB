@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SwapiServiceProvider } from "../SwapiServiceContext";
 import { PeoplePage, PlanetsPage, StarshipsPage } from "../Pages";
 import ErrorBoundry from "../ErrorBoundry";
@@ -23,13 +23,15 @@ class App extends React.Component {
       <ErrorBoundry>
           <SwapiServiceProvider value={this.state.swapiService}>
                 <div className="stardb-app">
-                    <Routes >
-                        <Route path="/" element={<Layout />}>
-                            <Route path="/people/" element={<PeoplePage/>}/>
-                            <Route path="/planets/" element={<PlanetsPage/>}/>
-                            <Route path="/starships/" element={<StarshipsPage/>} />
-                        </Route>
-                    </Routes>
+                    <BrowserRouter >
+                        <Routes >
+                            <Route path="/" element={<Layout />}>
+                                <Route path="/people/" element={<PeoplePage/>}/>
+                                <Route path="/planets/" element={<PlanetsPage/>}/>
+                                <Route path="/starships/" element={<StarshipsPage/>} />
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
                 </div>
           </SwapiServiceProvider>
       </ErrorBoundry>
