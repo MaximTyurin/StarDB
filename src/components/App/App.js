@@ -29,6 +29,7 @@ class App extends React.Component {
                                 <Route path="/people/" element={<PeoplePage/>}/>
                                 <Route path="/planets/" element={<PlanetsPage/>}/>
                                 <Route path="/starships/" element={<StarshipsPage/>} />
+                                <Route path="*" element={<h2>Page does not exist</h2>}/>
                             </Route>
                         </Routes>
                     </BrowserRouter>
