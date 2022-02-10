@@ -24,12 +24,11 @@ class App extends React.Component {
           <SwapiServiceProvider value={this.state.swapiService}>
                 <div className="stardb-app">
                     <Routes >
-                        <Route path="/" element={<Layout />}>
-                            <Route path="/people/" element={<PeoplePage/>}/>
-                            <Route path="/planets/" element={<PlanetsPage/>}/>
-                            <Route path="/starships/" element={<StarshipsPage/>} />
-                            <Route path="*" element={<h2>Page does not exist</h2>}/>
-                        </Route>
+                        <Route path="/StarDB/" element={<Layout />} />
+                        <Route path="/people/" element={<PeoplePage/>}/>
+                        <Route path="/planets/" element={<PlanetsPage/>}/>
+                        <Route path="/starships/" element={<StarshipsPage/>} />
+                        <Route path="*" element={<h2>Page does not exist</h2>}/>
                     </Routes>
                 </div>
           </SwapiServiceProvider>
