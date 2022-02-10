@@ -1,12 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { SwapiServiceProvider } from "../SwapiServiceContext";
 import { PeoplePage, PlanetsPage, StarshipsPage } from "../Pages";
 import ErrorBoundry from "../ErrorBoundry";
 import SwapiService from "../../services/swapi-service";
 import Layout from "../Layout/Layout";
 import "./App.css";
-import RandomPlanet from "../RandomPlanet";
 
 class App extends React.Component {
 
@@ -39,6 +38,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
